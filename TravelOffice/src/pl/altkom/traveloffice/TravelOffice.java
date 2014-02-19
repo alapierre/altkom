@@ -147,7 +147,6 @@ public class TravelOffice {
         System.out.println("wpisana data " + formatDate(startDate)); 
         
         System.out.println("Podaj datę końcową");
-        String end = keyboard.next();
         java.util.Date dateEnd = readDateFromKeyboard(keyboard, DATE_MASK);
         System.out.println("wpisana data " + formatDate(dateEnd)); 
         
