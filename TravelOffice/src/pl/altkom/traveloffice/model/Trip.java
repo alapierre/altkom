@@ -16,6 +16,7 @@ public class Trip {
     private Date end;
     
     private String destination;
+    private Country country;
 
     public Trip(Date start, Date end, String destination) {
         this.start = start;
@@ -55,6 +56,15 @@ public class Trip {
     public void setDestination(String destination) {
         this.destination = destination;
     }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
+    }
+    
     
     
     

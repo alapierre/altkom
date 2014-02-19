@@ -72,7 +72,8 @@ public class TravelOffice {
             System.out.println("1. Lista wycieczek");
             System.out.println("2. Lista klientów");
             System.out.println("3. Dodaj wyieczkę");
-            System.out.println("4. Wyjście");
+            System.out.println("4. Dodaj klienta");
+            System.out.println("5. Wyjście");
 
             Scanner keyboard = new Scanner(System.in);
             int res = keyboard.nextInt();
@@ -85,9 +86,10 @@ public class TravelOffice {
                     travelOffice.displayTrips();
                     break;
                 case 3:
-                    readTripFromKeyboard(keyboard);
+                    Trip trip = readTripFromKeyboard(keyboard);
+                    travelOffice.addTrip(trip, trip.getCountry());
                     break;
-                case 4:
+                case 5:
                     end = true;
                     break;
                 default:
@@ -153,9 +155,11 @@ public class TravelOffice {
         System.out.println("Podaj kraj");
         String country = keyboard.next();
         
+        Trip trip = new Trip(new Date(startDate),
+                new Date(dateEnd), name);
+        trip.setCountry(new Country(country));
         
-        
-        return null;
+        return trip;
     }
     public static final String DATE_MASK = "yyyy-MM-dd";
    
