@@ -6,11 +6,13 @@
 
 package pl.altkom.traveloffice.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author altkom
  */
-public class Trip {
+public class Trip implements Serializable{
     
     private Date start;
     private Date end;

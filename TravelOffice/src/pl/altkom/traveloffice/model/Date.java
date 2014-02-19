@@ -6,11 +6,13 @@
 
 package pl.altkom.traveloffice.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author altkom
  */
-public class Date {
+public class Date implements Serializable {
     
     private int day;
     private int month;

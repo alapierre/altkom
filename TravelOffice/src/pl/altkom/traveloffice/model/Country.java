@@ -6,13 +6,14 @@
 
 package pl.altkom.traveloffice.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author altkom
  */
-public class Country {
+public class Country implements Serializable{
     
     private String name;
 

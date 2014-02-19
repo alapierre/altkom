@@ -102,7 +102,7 @@ public class TravelOffice {
                     end = true;
                     break;
                 default:
-                    throw new AssertionError();
+                    System.out.println("nieprawidłowy wybór");
             }
         }
     }
