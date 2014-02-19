@@ -6,11 +6,13 @@
 
 package pl.altkom.traveloffice.uti;
 
+import java.util.Iterator;
+
 /**
  *
  * @author altkom
  */
-public class Kontener<T> {
+public class Kontener<T> implements Iterable<T>{
     
     private int currentSize = 10;
     private Object[] tab = new Object[currentSize];
@@ -60,5 +62,36 @@ public class Kontener<T> {
         }
         
         return res;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new KontenerIterator<>(this);
+    }
+    
+    public class KontenerIterator<T> implements Iterator<T> {
+
+        private Kontener<T> kontener;
+        private int counter; 
+
+        public KontenerIterator(Kontener<T> kontener) {
+            this.kontener = kontener;
+        }
+        
+        @Override
+        public boolean hasNext() {
+            return kontener.licznik < counter;
+        }
+
+        @Override
+        public T next() {
+            return (T)kontener.tab[counter++];
+        }
+
+        @Override
+        public void remove() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+        
     }
 }

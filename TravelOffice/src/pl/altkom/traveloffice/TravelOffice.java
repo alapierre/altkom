@@ -76,6 +76,7 @@ public class TravelOffice {
             System.out.println("5. Wyjście");
 
             Scanner keyboard = new Scanner(System.in);
+            
             int res = keyboard.nextInt();
 
             System.out.println("wcisnąłęś " + res);
@@ -85,9 +86,17 @@ public class TravelOffice {
                     System.out.println("lista wycieczek:");
                     travelOffice.displayTrips();
                     break;
+                case 2:
+                    travelOffice.displayCustomers();
+                    break;
                 case 3:
                     Trip trip = readTripFromKeyboard(keyboard);
                     travelOffice.addTrip(trip, trip.getCountry());
+                    break;
+                case 4:
+                    Customer customer = readCustomerFromKeyboard(keyboard);
+                    travelOffice.addCustomer(customer);
+                    travelOffice.displayCustomers();
                     break;
                 case 5:
                     end = true;
@@ -96,47 +105,33 @@ public class TravelOffice {
                     throw new AssertionError();
             }
         }
-//        int res;
-//        do {
-//            Scanner keyboard = new Scanner(System.in);
-//            res = keyboard.nextInt();
-//            
-//            System.out.println("wcisnąłęś " + res);
-//        } while (res!=4);
+    }
+    
+    public void addCustomer(Customer customer) {
+        customers.add(customer);
+    }
+    
+    public void displayCustomers() {
+        for(Customer customer : customers) {
+            System.out.println(customer.getInfo());
+        }
         
-//        Date start = new Date(1, 7, 2014);
-//        Date end = new Date(14, 7, 2014);
-//        
-//        Trip trip = new Trip(start, end, "Ateny");
-//        
-//        Customer customer = new Customer("Jan kowalski");
-//        customer.setAddress("Marszałkowska 123/3");
-//        customer.assignTrip(trip);
-//        
-//        System.out.println(customer);
-//        
-//        TravelOffice travelOffice = new TravelOffice();
-//        
-//        Trip trip2 = new Trip(start, end, "Bieszczady");
-//        Trip trip3 = new Trip(start, end, "Bieszczady");
-//        Trip trip4 = new Trip(start, end, "Kreta");
-//        
-//        travelOffice.addTrip(trip, new Country("Grecja"));
-//        travelOffice.addTrip(trip2, new Country("Polska"));
-//        travelOffice.addTrip(trip3, new Country("Polska"));
-//        travelOffice.addTrip(trip4, new Country("Grecja"));
-//        
-//        travelOffice.displayTrips();
-//        
-//        List<Trip> b = travelOffice.findTripByName("Bieszczady");
-//        
-//        System.out.println(b);
-//        
-//        travelOffice.customers.add(customer);
+        System.out.println(customers);
+    }
+    
+    public static Customer readCustomerFromKeyboard(Scanner keyboard) {
         
-        //System.out.println(travelOffice.trips);
-        //System.out.println(travelOffice.customers);
+        System.out.println("Podaj imię i nazwisko klienta");
+        String name = keyboard.next();
+        String lastName = keyboard.next();
         
+        System.out.println("Podaj adres klienta");
+        String address = keyboard.next();
+        
+        Customer customer = new Customer(name + " " + lastName);
+        customer.setAddress(address);
+        
+        return customer;
     }
     
     public static Trip readTripFromKeyboard(Scanner keyboard) {

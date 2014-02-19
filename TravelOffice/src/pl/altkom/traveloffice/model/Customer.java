@@ -18,6 +18,9 @@ public class Customer {
     String address;
     Kontener<Trip> trip = new Kontener<>();
 
+    public Customer() {
+    }
+    
     public Customer(String name) {
         this.name = name;        
     }
