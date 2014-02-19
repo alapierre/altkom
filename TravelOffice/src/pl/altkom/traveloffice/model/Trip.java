@@ -20,6 +20,9 @@ public class Trip implements Serializable{
     private String destination;
     private Country country;
 
+    public Trip() {
+    }
+
     public Trip(Date start, Date end, String destination) {
         this.start = start;
         this.end = end;
