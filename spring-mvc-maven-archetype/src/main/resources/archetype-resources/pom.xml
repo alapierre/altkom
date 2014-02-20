@@ -1,0 +1,143 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>${groupId}</groupId>
+    <artifactId>${artifactId}</artifactId>
+    <version>${version}</version>
+    <packaging>war</packaging>
+
+    <name>Spring MVC Web Application</name>
+    <url>http://www.softproject.com.pl</url>
+    
+    <properties>
+        <spring.version>3.2.2.RELEASE</spring.version>
+        <spring.security.version>3.1.4.RELEASE</spring.security.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    
+    <dependencies>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.14</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+        
+        
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${spring.security.version}</version>            
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring.security.version}</version>            
+        </dependency>
+
+        <dependency>
+            <artifactId>spring-security-core</artifactId>
+            <groupId>org.springframework.security</groupId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        
+        <!-- Spring do Spring Security -->
+        
+        <dependency>
+            <artifactId>spring-aop</artifactId>
+            <groupId>org.springframework</groupId>
+            <type>jar</type>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <artifactId>spring-beans</artifactId>
+            <groupId>org.springframework</groupId>
+            <type>jar</type>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <artifactId>spring-expression</artifactId>
+            <groupId>org.springframework</groupId>
+            <type>jar</type>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <artifactId>spring-jdbc</artifactId>
+            <groupId>org.springframework</groupId>
+            <type>jar</type>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <artifactId>spring-tx</artifactId>
+            <groupId>org.springframework</groupId>
+            <type>jar</type>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <artifactId>spring-web</artifactId>
+            <groupId>org.springframework</groupId>
+            <type>jar</type>
+            <version>${spring.version}</version>
+        </dependency>
+        
+        <!-- reszta zależności Spring-->
+        
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>            
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>            
+            <version>${spring.version}</version>
+        </dependency>
+            
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+            <scope>test</scope>
+        </dependency>
+            
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+            <type>jar</type>
+        </dependency>
+            
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.4</version>
+        </dependency>
+            
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.1.2</version>
+        </dependency>    
+            
+    </dependencies>
+</project>
