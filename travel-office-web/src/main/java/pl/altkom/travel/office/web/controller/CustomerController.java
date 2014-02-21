@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package pl.altkom.travel.office.web.controller;
 
 import javax.validation.Valid;
@@ -23,39 +22,41 @@ import pl.altkom.travel.office.web.model.Customer;
  */
 @Controller
 public class CustomerController {
-    
+
     @Autowired
     private CustomerDAO customerDAO;
-    
-    
+
     @RequestMapping("/display-customers")
     public ModelAndView displayCustomers() {
-        
+
         Iterable<Customer> customers = customerDAO.findAll();
         ModelAndView model = new ModelAndView("display-customers");
         model.addObject("customers", customers);
-        
+
         return model;
     }
-    
+
     @RequestMapping("/customer_details")
     public ModelAndView customerDetails(@RequestParam int id) {
-        
+
         Customer customer = customerDAO.findOne(id);
-        
+
         ModelAndView model = new ModelAndView("customer_details");
         model.addObject("customer", customer);
-        
+
         return model;
     }
-    
+
     @RequestMapping(value = "/save_customer", method = RequestMethod.POST)
     public String saveCustomer(@Valid Customer customer, BindingResult bindingResult) {
-        
-        System.out.println(customer);
-        
-        
-        return "customer_details";
+
+        if (bindingResult.hasErrors()) {
+            return "customer_details";
+        } else {
+            customerDAO.save(customer);
+            return "redirect:/display-customers.htm";
+        }
+
     }
-    
+
 }
