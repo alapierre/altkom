@@ -154,12 +154,12 @@
             <scope>runtime</scope>
         </dependency>
 
-	<!--dependency>
+	<dependency>
             <groupId>org.apache.derby</groupId>
             <artifactId>derbyclient</artifactId>
             <version>10.6.2.1</version>
             <scope>runtime</scope>
-        </dependency-->
+        </dependency>
 
 	<dependency>
             <groupId>org.slf4j</groupId>

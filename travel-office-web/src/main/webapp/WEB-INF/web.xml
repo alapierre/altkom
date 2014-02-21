@@ -28,7 +28,8 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            /WEB-INF/travel-office-web-servlet.xml          
+            /WEB-INF/travel-office-web-servlet.xml,
+            classpath:travel-office-web-core.xml          
         </param-value>
     </context-param>
     
