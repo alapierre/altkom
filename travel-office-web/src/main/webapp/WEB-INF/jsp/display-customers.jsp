@@ -5,6 +5,7 @@
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -26,5 +27,10 @@
             
         </c:forEach>
         </table>
+        
+        <sec:authorize ifAnyGranted="ROLE_ADMIN">
+            <input type="button" value="Dodaj nowy"/> 
+        </sec:authorize>
+        
     </body>
 </html>

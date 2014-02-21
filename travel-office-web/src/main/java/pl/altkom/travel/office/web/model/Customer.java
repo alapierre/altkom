@@ -11,6 +11,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
@@ -37,7 +41,10 @@ public class Customer {
     @Email
     @Column(length = 128)
     private String email;
-
+    @ManyToOne
+    @JoinColumn(name = "country_id")
+    private Country country;
+    
     public String getName() {
         return name;
     }
@@ -76,6 +83,14 @@ public class Customer {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
     }
 
     

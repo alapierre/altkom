@@ -27,6 +27,13 @@
             <form:input path="address"/><form:errors path="address" cssClass="error"/> <br/>
             Email:<br/>
             <form:input path="email"/><form:errors path="email" cssClass="error"/> <br/>
+            
+            <form:select  path="country" id="countryId" >
+                <form:option value="NONE" label="--- Select ---"/>
+                <form:options items="${countries}" itemLabel="name" itemValue="id" />
+            </form:select>
+            
+            <form:hidden id="id" path="id"></form:hidden>
             <form:button>Zapisz</form:button>
         </form:form>
         

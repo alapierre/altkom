@@ -16,16 +16,17 @@
 		
     <security:http>
         <security:intercept-url pattern="/*" access="ROLE_USER,ROLE_ADMIN" />        
-        <security:form-login />
+        <security:form-login  />
         <security:anonymous />
         <security:http-basic />
-        <security:logout />
+        <security:logout logout-url="/logout" />
         <security:remember-me />
     </security:http>     
         
     <security:authentication-manager alias="myAuthManager">
         <security:authentication-provider>
             <!--security:jdbc-user-service data-source-ref="dataSource" /-->
+            <!--<security:password-encoder hash="sha-256"/>-->
             <security:user-service>
                 <security:user name="admin" password="test.11" authorities="ROLE_USER,ROLE_ADMIN" />
                 <security:user name="user" password="user" authorities="ROLE_USER" />
