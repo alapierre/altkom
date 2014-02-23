@@ -90,6 +90,6 @@
         <location>/404.htm</location>
     </error-page-->
     <welcome-file-list>
-        <welcome-file>home.htm</welcome-file>
+        <welcome-file>display-customers.htm</welcome-file>
     </welcome-file-list>
 </web-app>

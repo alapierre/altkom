@@ -5,11 +5,11 @@
  */
 package pl.altkom.travel.office.web.controller;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -62,13 +62,13 @@ public class CustomerController {
     }
 
     @RequestMapping(value = "/save_customer", method = RequestMethod.POST)
-    public String saveCustomer(@Valid Customer customer, BindingResult bindingResult, HttpServletRequest request) {
+    public String saveCustomer(@Valid Customer customer, BindingResult bindingResult) {
 
         System.out.println("saveCustomer");
         
-        System.out.println(request.getParameterMap());
-        
-        
+        if(customer.getCountry().getId() == 0) {
+            bindingResult.addError(new ObjectError("country.id", "proszę wybrać kraj"));
+        }
         
         if (bindingResult.hasErrors()) {
             
