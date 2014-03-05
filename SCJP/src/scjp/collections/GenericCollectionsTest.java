@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author student
+ * Adrian Lapierre <adrian@softproject.com.pl>
  */
 public class GenericCollectionsTest {
     public static void main(String[] args) {

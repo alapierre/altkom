@@ -6,7 +6,7 @@ package scjp.collections;
 
 /**
  *
- * @author student
+ * Adrian Lapierre <adrian@softproject.com.pl>
  */
 public class TestInteger {
     

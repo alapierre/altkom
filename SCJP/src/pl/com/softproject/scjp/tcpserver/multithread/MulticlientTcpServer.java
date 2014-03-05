@@ -10,7 +10,7 @@ import java.net.Socket;
 
 /**
  *
- * @author Adrian
+ * @author Adrian Lapierre <adrian@softproject.com.pl>
  */
 public class MulticlientTcpServer {
 

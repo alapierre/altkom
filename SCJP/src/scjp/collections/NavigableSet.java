@@ -8,7 +8,7 @@ import java.util.TreeSet;
 
 /**
  *
- * @author student
+ * Adrian Lapierre <adrian@softproject.com.pl>
  */
 public class NavigableSet {
    

@@ -6,7 +6,7 @@ package scjp.collections.basic;
 
 /**
  *
- * @author student
+ * Adrian Lapierre <adrian@softproject.com.pl>
  */
 public class EnumTest {
     
