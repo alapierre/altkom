@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<obj xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="resources/pytania.xsd"
+ >
+    <pyt>
+        <nr>1</nr>
+        <tresc><![CDATA[Which of the following statements are true about the relationships between the following classes?
+        
+        class Foo {
+        	int num;
+        	Baz comp = new Baz();
+        }
+        
+        class Bar {
+        	boolean flag;
+        }
+        
+        class Baz extends Foo {
+        	Bar thing = new Bar();
+        	double limit;
+        }
+        ]]></tresc>
+        <level>1</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>3</liczba_poprawnych>
+        <odp>A Bar is a Baz</odp>
+		<odp>A Foo has a Baz</odp>
+		<odp>A Baz is a Foo</odp>
+		<odp>A Foo is a Baz</odp>
+		<odp>A Baz has a Bar</odp>
+        <poprawne>2,3,5</poprawne>
+    </pyt>
+    <pyt>
+        <nr>2</nr>
+        <tresc><![CDATA[What is the result of compiling and running the following code?
+        
+        class A {
+			Integer print() {
+				System.out.println("A");
+				return 0;
+        	}
+        }
+        class B extends A {
+        	int print() {
+        		super.print();
+        		System.out.println("B");
+        		return 0;
+        	}
+        
+        public static void main(String[] args) {
+        	A obj = new B();
+        	obj.print();
+        	}
+        }
+        ]]></tresc>
+        <level>1</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Compiler error</odp>
+		<odp>ClassCastException</odp>
+		<odp>Prints "B"</odp>
+		<odp>Prints "A" followed by "B"</odp>
+        <poprawne>1</poprawne>
+    </pyt>
+    <pyt>
+        <nr>3</nr>
+        <tresc><![CDATA[Given the following class definition, which of the following methods could be placed after the comment //Here?
+        
+        1. public class Rid
+        2. {
+        3. 		public void aMethod(int i, String s){}
+        4. 		//Here
+        5. }
+        ]]></tresc>
+        <level>1</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>2</liczba_poprawnych>
+        <odp>public void aMethod(String s, int i){}</odp>
+		<odp>public int aMethod(int i, String s){}</odp>
+		<odp>public void aMethod(int i, String myString){}</odp>
+		<odp>public void AMethod(int i, String s){}</odp>
+        <poprawne>1,4</poprawne>
+    </pyt>
+    <pyt>
+        <nr>4</nr>
+        <tresc><![CDATA[A Vehicle has an owner and a registration number. A Car is Vehicle that has a steering wheel and a model name. Choose the fields which must be included in the Car class. (The Vehicle class is already defined)]]></tresc>
+        <level>1</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>2</liczba_poprawnych>
+        <odp>Steering s</odp>
+		<odp>Person owner</odp>
+		<odp>String registrationNr</odp>
+		<odp>String modelName</odp>
+		<odp>Vehicle c</odp>
+        <poprawne>1,4</poprawne>
+    </pyt>
+    <pyt>
+        <nr>5</nr>
+        <tresc><![CDATA[What is the result of compiling and running the given code?
+        
+        class A {
+        	A() {
+        		System.out.println("A");
+        	}
+        }
+        class B extends A {
+        	B() {
+        		this(4);
+        		super();
+        		System.out.println("B");
+        	}
+        	B(int i) {
+        		System.out.println("C");
+        	}
+        }
+        ]]></tresc>
+        <level>1</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Does not compile</odp>
+		<odp>Prints "ABC"</odp>
+		<odp>Prints "ACB"</odp>
+		<odp>Prints "CAB"</odp>
+        <poprawne>1</poprawne>
+    </pyt>
+    <pyt>
+        <nr>6</nr>
+        <tresc><![CDATA[What will be the result of attempting to compile and run the following program?
+        
+        interface Inter{}
+        class Base implements Inter{}
+        class Derived extends Base{}
+        public class Test {
+        	public static void main(String[] args){
+        		Base b = new Base();
+        		Derived d = new Derived();
+        		Inter i = (Base)b;			//1
+        		i = (Base)d;				//2
+        		Derived bd = (Derived)b;	//3
+        		b = (Base)i;				//4
+        	}
+        }
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>6</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Compiler error at line 1</odp>
+		<odp>Compiler error at line 2</odp>
+		<odp>Compiler error at line 3</odp>
+		<odp>Compiler error at line 4</odp>
+		<odp>ClassCastException at runtime</odp>
+		<odp>Compiles and runs without errors</odp>
+        <poprawne>5</poprawne>
+    </pyt>
+    <pyt>
+        <nr>7</nr>
+        <tresc><![CDATA[Which of the following statements about the following code fragment are true?
+        
+        1.	public class Test
+        2.	{
+        3.		public static void main(String[] args)
+        4.		{
+        5.			print();
+        6.		}
+        7.	
+        8.		public static void print()
+        9.		{
+        10.			System.out.println("Test");
+        11.		}
+        12.
+        13.		public void print()
+        14.		{
+        15.			System.out.println("Another Test");
+        16.		}
+        17.	}
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>2</liczba_poprawnych>
+        <odp>The code compiles successfully and displays "Test"</odp>
+		<odp>Changing the code at line 13 to "public void print(int x){" will allow the code to compile correctly</odp>
+		<odp>The code fails to compile. The compiler complains about duplicated methods</odp>
+		<odp>Changing the return type on line 13 from 'void' to 'int' will allow the code to compile correctly</odp>
+        <poprawne>2,3</poprawne>
+    </pyt>
+    <pyt>
+        <nr>8</nr>
+        <tresc><![CDATA[What will happen when you attempt to compile and run the following code?
+        
+        class Base
+        {
+        	private void aMethod(int iBase)
+        	{
+        		System.out.println("Base");
+        	}
+        }
+        class Over extends Base
+        {
+        	public static void main(String[] argv)
+        	{
+        		Base o = new Over();
+        		int iBase = 0;
+        		o.aMethod(iBase);
+        	}
+        	
+        	public void aMethod(int iOver)
+        	{
+        		System.out.println("Over");
+        	}
+        }
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Compiler error</odp>
+		<odp>Prints "Base"</odp>
+		<odp>Prints "Over"</odp>
+		<odp>ClassCastException</odp>
+        <poprawne>1</poprawne>
+    </pyt>
+    <pyt>
+        <nr>9</nr>
+        <tresc><![CDATA[Which of the following methods can be legally inserted in place of the comment //Method Here?
+        
+        class Base
+        {
+        	public void aMethod(int i) {}
+        }
+        
+        public class Scope extends Base
+        {
+        	public static void main(String[] args)
+        	{
+        	
+        	}
+        	//Method Here
+        }
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>2</liczba_poprawnych>
+        <odp>void aMethod(int i) throws Exception {}</odp>
+		<odp>void aMethod(long l) throws Exception {}</odp>
+		<odp>void aMethod(long l)</odp>
+		<odp>public void aMethod(int i) throws Exception {}</odp>
+        <poprawne>2,3</poprawne>
+    </pyt>
+    <pyt>
+        <nr>10</nr>
+        <tresc><![CDATA[Which of the following are benefits of encapsulation?]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>2</liczba_poprawnych>
+        <odp>Reusability of code</odp>
+		<odp>Code clarity</odp>
+		<odp>Faster execution</odp>
+		<odp>Less dependency on other classes</odp>
+        <poprawne>1,2</poprawne>
+    </pyt>
+    <pyt>
+        <nr>11</nr>
+        <tresc><![CDATA[Which of the following is true about the takeOrderAndServe() method in the below code?
+        
+        class Waitor{
+        	void takeOrders() {}
+        	void serveFood() {}
+        	void takeOrderAndServe() {
+        		takeOrders();
+        		serveFood();
+        	}
+        }
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>It exhibits high cohesion</odp>
+		<odp>It exhibits low cohesion</odp>
+		<odp>It exhibits tight coupling</odp>
+		<odp>It exhibits loose coupling</odp>
+        <poprawne>2</poprawne>
+    </pyt>
+    <pyt>
+        <nr>12</nr>
+        <tresc><![CDATA[What will be the result of an attempt to compile and run the following code?
+        
+        class Test {
+        	static Object test = "hello";
+        	void f(Object x) {System.out.println("Object");}
+        	void f(String x) {System.out.println("String");}
+        	void f(StringBuffer x) {System.out.println("StringBuffer");}
+        	public static void main(String[] args) {
+        		Test t = new Test();
+        		t.f(test);
+        	}
+        }
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>6</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Prints "String"</odp>
+        <odp>Prints "StringBuffer"</odp>
+        <odp>Prints "Object"</odp>
+		<odp>Compiler complains about an ambiguous method call</odp>
+		<odp>Exception thrown at runtime</odp>
+		<odp>None of the above</odp>
+        <poprawne>3</poprawne>
+    </pyt>
+    <pyt>
+        <nr>13</nr>
+        <tresc><![CDATA[What will be the result of compiling and running the following code?
+        
+        class SuperTest 
+        {
+        	int f() 
+        	{
+        		return 0;
+        	}
+        }
+        public class Test extends SuperTest {
+        	int i;
+        	protected int f() throws Error
+        	{
+        		return i;
+        	}
+        	Test(int i)
+        	{
+        		this.i = i;
+        	}
+        	public static void main(String[] args)
+        	{
+        		SuperTest t = new Test(5);
+        		System.out.println(t.f());
+        	}
+        }
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Prints 0</odp>
+		<odp>Prints 5</odp>
+		<odp>Code does not compile, a method with default access cannot be overriden as protected</odp>
+		<odp>Code does not compile, a method in the subclass cannot throw exceptions not thrown by the overriden method</odp>
+		<odp>None of the above</odp>
+        <poprawne>2</poprawne>
+    </pyt>
+    <pyt>
+        <nr>14</nr>
+        <tresc><![CDATA[What will appear in the standard output when you run the Tester class?
+        
+        1.	class Tester
+        2.	{
+        3.		int var;
+        4.		Tester(double var)
+        5.		{
+        6.			this.var = (int)var;
+        7.		}
+        8.		Tester(int var)
+        9.		{
+        10.			this("hello");
+        11.		}
+        12.		Tester(String s)
+        13.		{
+        14.			this();
+        15.			System.out.println(s);
+        16.		}
+        17.		Tester()
+        18.		{
+        19.			System.out.println("good-bye");
+        20.		}
+        21.		public static void main(String[] args)
+        22.		{
+        23.			Tester t = new Tester(5);
+        24.		}
+        25.	}
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>"hello"</odp>
+		<odp>5</odp>
+		<odp>"hello" followed by "good-bye"</odp>
+		<odp>"good-bye" followed by "hello"</odp>
+        <poprawne>4</poprawne>
+    </pyt>
+    <pyt>
+        <nr>15</nr>
+        <tresc><![CDATA[What will happen when you compile and run the following code?
+        
+        public class Test
+        {
+        	public void myMethod(String s)
+        	{
+        		System.out.println("My String");
+        	}
+        	public void myMethod(StringBuffer sb)
+        	{
+        		System.out.println("My StringBuffer");
+        	}
+        	public void myMethod(Object sb)
+        	{
+        		System.out.println("My Object");
+        	}
+        	public static void main(String[] args)
+        	{
+        		Test t = new Test();
+        		t.myMethod(null);
+        	}
+        }
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>The code does not compile</odp>
+		<odp>The code compiles correctly and prints "My StringBuffer"</odp>
+		<odp>The code compiles correctly and prints "My String"</odp>
+		<odp>The code compiles correctly and prints "My Object"</odp>
+		<odp>The code throws an Exception at Runtime</odp>
+        <poprawne>1</poprawne>
+    </pyt>
+    <pyt>
+        <nr>16</nr>
+        <tresc><![CDATA[Which statement, when inserted at the indicated position in the following code, will cause a runtime exception to be thrown?
+        
+        class A{}
+        class B extends A{}
+        class C extends A{}
+        public class Test {
+        	public static void main(String[] args) {
+        		A x = new A();
+        		B y = new B();
+        		C z = new C();
+        		// insert statement here
+        	}
+        }
+        ]]></tresc>
+        <level>3</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>x = y;</odp>
+		<odp>z = y;</odp>
+		<odp>y = (B)x;</odp>
+		<odp>z = (C)y;</odp>
+		<odp>y = (A)y;</odp>
+        <poprawne>3</poprawne>
+    </pyt>
+    <pyt>
+        <nr>17</nr>
+        <tresc><![CDATA[What will be the result of compiling and running the following code?
+        
+        class SuperTest
+        {
+        	SuperTest() throws Exception {
+        	}
+        	int f() {
+        		return 0;
+        	}
+        }
+        
+        public class Test extends SuperTest {
+        	int i;
+        	int f() {
+				return i;
+        	}
+        	Test(int i) {
+        		this.i = i;
+        	}
+        	public static void main(String[] args) {
+        		SuperTest t = new Test(5);
+        		System.out.println(t.f());
+        	}
+        }
+        ]]></tresc>
+        <level>3</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Code does not compile</odp>
+		<odp>Prints 0</odp>
+		<odp>Prints 5</odp>
+		<odp>Exception is thrown at runtime</odp>
+        <poprawne>1</poprawne>
+    </pyt>
+    <pyt>
+        <nr>18</nr>
+        <tresc><![CDATA[What will be the result of attempt to compile and run the following code?
+        
+        class SuperBase{}
+        class Base extends SuperBase{}
+        class Derived extends Base{}
+        public class Test {
+        	public static void main(String[] args) {
+        		SuperBase[] s1 = new Base[2];		//1
+        		SuperBase[] s2 = new Derived[1]{new Derived()};		//2
+        		Base[] b1 = new Derived[0];			//3
+        		Derived[] d1 = (Derived[])s2;		//4
+        		Base[] b3 = d1;						//5	
+        		s1 = b1;							//6
+        	}
+        }
+        ]]></tresc>
+        <level>3</level>
+        <liczba_odpowiedzi>8</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Compiler error at line 1</odp>
+        <odp>Compiler error at line 2</odp>
+        <odp>Compiler error at line 3</odp>
+        <odp>Compiler error at line 4</odp>
+        <odp>Compiler error at line 5</odp>
+        <odp>Compiler error at line 6</odp>        
+		<odp>Compiles and run without errors</odp>
+		<odp>Throws ClassCastException at runtime</odp>
+        <poprawne>2</poprawne>
+    </pyt>
+    <pyt>
+        <nr>19</nr>
+        <tresc><![CDATA[What will be the result of an attempt to compile and run the following program?
+        
+        class Parent {
+        	static int i = 10;
+        	void m1() {
+				System.out.println("In parent " + i);
+        	}
+        	static void m1(String s) {
+				System.out.println(s = i);
+        	}
+        }
+        class Child extends Parent {
+        	static int i = 20;
+        	void m1() {
+				System.out.println("In child " + Child.i);
+        	}
+        	public static void main(String[] args) {
+        		Parent p = new Child();
+        		p.m1();
+        		System.out.println("Child data " + p.i);
+        	}
+        }
+        ]]></tresc>
+        <level>3</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Compiler error</odp>
+		<odp>Prints "In Child 20" followed by "Child data 10"</odp>
+		<odp>Prints "In Child 20" followed by "Child data 20"</odp>
+		<odp>None of the above</odp>
+        <poprawne>2</poprawne>
+    </pyt>    
+    <pyt>
+        <nr>20</nr>
+        <tresc><![CDATA[What will be the result of an attempt to compile and run the following program?
+        
+        class A {
+	        static void f() {
+				System.out.print("Inside A ");
+			}
+        }
+        class B extends A{
+	        static void f() {
+				System.out.print("Inside B ");
+			}
+        }
+        class C extends B{
+			static void f() {
+				System.out.print("Inside C ");
+			}
+	    }
+        class D {
+        	public static void main(String[] args) {
+        		C c = new C();
+        		c.f();
+        		B b = c;
+        		b.f();
+        		A a = (B)c;
+        		a.f();
+        	}
+        }
+        ]]></tresc>
+        <level>3</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Prints "Inside C Inside B Inside A"</odp>
+		<odp>Prints "Inside"</odp>
+		<odp>Prints "Inside C Inside C"</odp>
+		<odp>Prints "Inside C Inside C Inside B"</odp>
+		<odp>None of the above</odp>
+        <poprawne>1</poprawne>
+    </pyt>
+</obj>

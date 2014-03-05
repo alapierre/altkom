@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<obj xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="resources/pytania.xsd"
+ >
+    <pyt>
+        <nr>1</nr>
+        <tresc><![CDATA[Which of the following lines will print false?
+        
+        1. public class MyClass
+        2. {
+        3. 		static String s1 = "I am unique!";
+        4.		public static void main(String[] args)
+        5.		{
+        6.			String s2 = "I am unique!";
+        7.			String s3 = new String(s1);
+        8.			System.out.println(s1==s2);
+        9.			System.out.println(s1.equals(s2));
+        10.			System.out.println(s3==s1);
+        11.			System.out.println(s3.equals(s1));
+        12.		}
+        13.	}
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Line 8</odp>
+		<odp>Line 9</odp>
+		<odp>Line 10</odp>
+		<odp>Line 11</odp>
+		<odp>None of these</odp>
+        <poprawne>3</poprawne>
+    </pyt>
+    <pyt>
+        <nr>2</nr>
+        <tresc><![CDATA[What is the result of compiling and running the following program?
+        
+        import java.util.regex.*;
+        import java.util.*;
+        class ScannerTest2{
+	        public static void main(String[] args) {
+	        	String input = "10 apples 20 oranges 33 pears";
+	        	Scanner s = new Scanner(input).useDelimiter("\\d\\d\\s");
+	        	while (s.hasNext())
+	        		System.out.print(s.next());
+	        	s.close();
+	        }
+        }
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+		<odp>Compiler error</odp>
+		<odp>Prints 10 20 33</odp>
+		<odp>Prints apples oranges pears</odp>
+		<odp>None of these</odp>
+        <poprawne>3</poprawne>
+    </pyt>
+    <pyt>
+        <nr>3</nr>
+        <tresc><![CDATA[What is the result of compiling and running the following code?
+        
+        1. StringBuffer s1 = new StringBuffer("hello");
+        2. StringBuffer s2 = new StringBuffer("hello");
+        3. Float f1 = 9.0F;
+        4. Double f2 = 9.0;
+        5. System.out.println(f1.equals(f2));
+        6. System.out.println(s1 == s2);
+        7. System.out.println(s1.equals(s2));
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Prints "truetruetrue"</odp>
+		<odp>Prints "falsefalsetrue"</odp>
+		<odp>Prints "falsefalsefalse"</odp>
+		<odp>Compiler error on line 5</odp>
+		<odp>Compiler error on line 7</odp>
+        <poprawne>3</poprawne>
+    </pyt>
+    <pyt>
+        <nr>4</nr>
+        <tresc><![CDATA[What is the result of compiling and running the following program?
+        
+        import java.util.Arrays;
+        
+        class Split2 {
+	        public static void main(String[] args) {
+		        String str = "She sells sea shells";
+		        System.out.println(Arrays.toString(str.split("\\s")));
+        	}
+        }
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Compiler error</odp>
+		<odp>An exception is thrown at runtime</odp>
+		<odp>Prints [She, sells, sea, shells]</odp>
+		<odp>Prints [he, ells, ea, hells]</odp>
+		<odp>Prints []</odp>
+        <poprawne>3</poprawne>
+    </pyt>
+    <pyt>
+        <nr>5</nr>
+        <tresc><![CDATA[Which of the following are filter streams in the java.io package?]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>2</liczba_poprawnych>
+        <odp>DataInputStream</odp>
+		<odp>BufferedInputStream</odp>
+		<odp>FileInputStream</odp>
+		<odp>InputStream</odp>
+        <poprawne>1,2</poprawne>
+    </pyt>
+    <pyt>
+        <nr>6</nr>
+        <tresc><![CDATA[Which of the following statements about the given code are true?
+        
+        class StringBuilderTest {
+        	public static void main(String[] args) {
+        		StringBuilder result = new StringBuilder("a");
+        		for (int i = 1; i<5; i++)
+        			result.append("a");
+        		result.insert(4,"123");
+        		System.out.println(result);
+        	}
+        }
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>If StringBuilder is replaced by StringBuffer, the only change is that thread synchronization is removed</odp>
+		<odp>It does not compile</odp>
+		<odp>It throws StringIndexOutOfBoundsException at runtime</odp>
+		<odp>It prints "aaaa123a"</odp>
+		<odp>It prints "aaaaa123"</odp>
+        <poprawne>4</poprawne>
+    </pyt>
+    <pyt>
+        <nr>7</nr>
+        <tresc><![CDATA[What is the result of compiling and running the given code, with the following commands?
+        
+	java Serialize3 S
+	java Serialize3 D
+        
+	import java.io.*;
+	import java.util.Date;
+        
+	class Serialize3 {
+		public static void main(String[] args) throws Exception {
+			if (args[0].equals("S"))
+			{
+			    Test t = new Test();
+        		t.setI(8);
+        		ObjectOutputStream oos = 
+        			new ObjectOutputStream(
+        				new FileOutputStream("f.tmp"));
+        		oos.writeObject(t);
+        		oos.close();
+        	}
+        	else if (args[0].equals("D"))
+        	{
+        		Test t = new Test();
+        		t.setI(8);
+        		ObjectInputStream ois = 
+        			new ObjectInputStream(
+        				new FileInputStream("f.tmp"));
+        		t = (Test)ois.readObject();
+        		System.out.println(t.getI());
+        		ois.close();
+        	} 
+        }
+	}
+    class Test implements Serializable{
+		transient int i=4;
+		Test() {
+        	i = 5;
+        }
+        void setI(int i) {
+        	this.i = i;
+        }
+        int getI() {
+        	return i;
+        }
+	}
+        ]]></tresc>
+        <level>3</level>
+        <liczba_odpowiedzi>6</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Code does not compile</odp>
+		<odp>Code throws an exception at runtime</odp>
+		<odp>Prints 0</odp>
+		<odp>Prints 4</odp>
+		<odp>Prints 5</odp>
+		<odp>Prints 8</odp>
+        <poprawne>3</poprawne>
+    </pyt>
+    <pyt>
+        <nr>8</nr>
+        <tresc><![CDATA[What is the result of compiling and running the following code?
+        
+        class Test{
+	        public static void main(String[] args) {
+	        	Character c = 65; 		//line 1
+	        	Character d = new Character('A');
+	        	if (c>d)				//line 3
+	        		System.out.println("True");
+	        	else
+	        		System.out.println("False");
+	        }
+        }
+        ]]></tresc>
+        <level></level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Compiler error at line 1</odp>
+		<odp>Compiler error at line 3</odp>
+		<odp>Prints "True"</odp>
+		<odp>Prints "False"</odp>
+        <poprawne>4</poprawne>
+    </pyt>
+    <pyt>
+        <nr>9</nr>
+        <tresc><![CDATA[What is the result of comiling and running the following code?
+        
+        1. class BoolTest {
+        2.		public static void main(String[] args){
+        3.			Boolean b = new Boolean("TRue");	
+        4.			Boolean c = new Boolean("Null");
+        5.			boolean d = true;
+        6.				Boolean e = (b || c) && d;
+        7. 				System.out.println(e);
+        8.			}
+        9. }
+        ]]></tresc>
+        <level>1</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Compiler error at line 3</odp>
+		<odp>Compiler error at line 4</odp>
+		<odp>Compiler error at line 6</odp>
+		<odp>Prints "true"</odp>
+		<odp>Prints "false"</odp>
+        <poprawne>4</poprawne>
+    </pyt>
+    <pyt>
+        <nr>10</nr>
+        <tresc><![CDATA[What is the result of attempting to compile and run given code?
+        
+        import java.util.*;
+        import java.util.regex.*;
+        class ScannerTest2{
+	        public static void main(String[] args) {
+	        	String input = "10 apples 20 oranges 33 pears";
+	        	Scanner s = new Scanner(input).useDelimiter("\\d*");
+	        	String str[] = new String[6];
+	        	int i = 0;
+	        	while (s.hasNext()) {
+	        		str[i] = s.next();
+	        		System.out.println(str[i++]);
+	        	}
+	        	s.close();
+	        }
+       	}
+        ]]></tresc>
+        <level>3</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Prints "apples", "oranges", "pears" in separate lines</odp>
+		<odp>Prints "10", "apples", "20", "oranges", "33", "pears" in separate lines</odp>
+		<odp>Exception thrown at runtime</odp>
+		<odp>Code does not compile</odp>
+		<odp>None of these</odp>
+        <poprawne>3</poprawne>
+    </pyt>
+    <pyt>
+        <nr>11</nr>
+        <tresc><![CDATA[What will be the result of compiling and running the following code?
+        
+        class Test{
+        	public static void main(String[] args) {
+        		1. StringBuffer s = "hello";
+        		2. String s1 = null;
+        		3. s.append(s1);
+        		4. System.out.println(s);
+        	}
+        }
+        ]]></tresc>
+        <level>3</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+		<odp>Compiler error at line 3</odp>
+		<odp>NullPointerException thrown at runtime</odp>
+		<odp>Prints "hellonull"</odp>
+		<odp>None of the above</odp>
+        <poprawne>4</poprawne>
+    </pyt>
+    <pyt>
+        <nr>12</nr>
+        <tresc><![CDATA[You want a floating poing number to be formatted in Italian format. Which of the following code snippets can help you achieve this?
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+		<odp><![CDATA[NumberFormat nf = new NumberFormat(Locale.Italy);
+		String s = nf.format(123.45);]]></odp>
+		<odp><![CDATA[NumberFormat nf = NumberFormat.getInstance(Locale.Italy);
+		String s = nf.format(123.45);]]></odp>
+		<odp><![CDATA[NumberFormat nf = NumberFormat.getInstance();
+		String s = nf.format(123.45, Locale.Italy);]]></odp>
+		<odp><![CDATA[NumberFormat nf = new NumberFormat();
+		String s = nf.format(123.45, Locale.Italy);]]></odp>
+        <poprawne>2</poprawne>
+    </pyt>
+    <pyt>
+        <nr>13</nr>
+        <tresc><![CDATA[What is the result when the following code is executed?
+        
+        String s = "howzzat";
+        Scanner scanner = new Scanner(s);
+        scaner.useDelimiter("wz");
+        scanner.next();
+        System.out.println(scanner.next());
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>No output</odp>
+		<odp>Prints "wz"</odp>
+		<odp>Prints "wzz"</odp>
+		<odp>Prints "ho"</odp>
+		<odp>Prints "zat"</odp>
+        <poprawne>5</poprawne>
+    </pyt>
+    <pyt>
+        <nr>14</nr>
+        <tresc><![CDATA[Which code fragment inserted at line 2 of the following code will yield an output of 54,567.68?
+        
+        NumberFormat numberFormat = NumberFormat.getInstance(Locale.UK);
+        // line 2			
+        System.out.println(numberFormat.format(54567.678));
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>numberFormat.setMaximumFractionDigits(2);</odp>
+		<odp>numberFormat.setFractionDigits(2);</odp>
+		<odp>numberFormat.setMinimumFractionDigits(2);</odp>
+		<odp>numberFormat.setDecimalDigits(2);</odp>
+		<odp>numberFormat.setMaximumDecimalDigits(2);</odp>
+        <poprawne>1</poprawne>
+    </pyt>
+    <pyt>
+        <nr>15</nr>
+        <tresc><![CDATA[What is the result of compiling and running the following code?
+        
+        String str = "aaaaaaaaabb";
+        String [] s = str.split("a{3}");
+        System.out.println(s.length);
+        ]]></tresc>
+        <level></level>
+        <liczba_odpowiedzi>7</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Compiler error</odp>
+		<odp>Exception at runtime</odp>
+		<odp>Prints 0</odp>
+		<odp>Prints 1</odp>
+		<odp>Prints 2</odp>
+		<odp>Prints 3</odp>
+		<odp>Prints 4</odp>
+        <poprawne>7</poprawne>
+    </pyt>
+    <pyt>
+        <nr>16</nr>
+        <tresc><![CDATA[Which of the following are true about the File class?
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>2</liczba_poprawnych>
+        <odp>You can perform file I/O operations using its methods</odp>
+		<odp>You can find the size of a file using its size() method</odp>
+		<odp>You can check if a file exists using exists() method</odp>
+		<odp>You can delete a file using its delete() method</odp>
+        <poprawne>3,4</poprawne>
+    </pyt>
+    <pyt>
+        <nr>17</nr>
+        <tresc><![CDATA[What is the result of compiling and running the given code?
+        
+        NumberFormat numberFormat = NumberFormat.getInstance(Locale.US);
+        	try {
+        		Number number = numberFormat.parse("4,455.67");
+        		System.out.println(number.intValue());
+        	}
+			catch(java.text.ParseException ex) {
+        		System.out.println("Error");
+			}
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Compiler error: intValue method not defined in Number</odp>
+		<odp>Prints "Error"</odp>
+		<odp>Prints 4,455</odp>
+		<odp>Prints 4455</odp>
+		<odp>Prints 4455.67</odp>
+        <poprawne>4</poprawne>
+    </pyt>
+    <pyt>
+        <nr>18</nr>
+        <tresc><![CDATA[You wish to customize serialization for your class which only implements Serializable interface. Which of the following must be done?
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Define the readObject and writeObject methods</odp>
+		<odp>Define the defaultReadObject and defaultWriteObject methods</odp>
+		<odp>Define the readExternal and writeExternal methods</odp>
+		<odp>Define the read and write methods</odp>
+        <poprawne>1</poprawne>
+    </pyt>
+    <pyt>
+        <nr>19</nr>
+        <tresc><![CDATA[Which of the following statements are true?
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>2</liczba_poprawnych>
+        <odp>ObjectInputStream implements all operations declared in DataInputStream</odp>
+		<odp>DataInputStream implements all operations declered in ObjectInputStream</odp>
+		<odp>Static variables are not serialized</odp>
+		<odp>Arrays are always serializable</odp>
+        <poprawne>1,3</poprawne>
+    </pyt>
+    <pyt>
+        <nr>20</nr>
+        <tresc><![CDATA[Which of the following is a method of a Locale class?]]></tresc>
+        <level>1</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+		<odp>getLanguage</odp>
+		<odp>getVariant</odp>
+		<odp>getCountry</odp>
+		<odp>All of the above</odp>
+        <poprawne>4</poprawne>
+    </pyt>
+    <pyt>
+        <nr>21</nr>
+        <tresc><![CDATA[Which of the following compiles correctly if f is an instance of the File class?]]></tresc>
+        <level>1</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>2</liczba_poprawnych>
+        <odp>String[] s = f.list();</odp>
+		<odp>File[] files = f.list();</odp>
+		<odp>File[] files = f.listFiles();</odp>
+		<odp>List files = f.listFiles();</odp>
+        <poprawne>1,3</poprawne>
+    </pyt>
+</obj>

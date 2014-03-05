@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<obj xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="resources/pytania.xsd">
+    <pyt>
+        <nr>1</nr>
+        <tresc><![CDATA[What will be the result of compiling and running the following code? (Assume that assertions are enabled at compile time as well as at runtime)
+        
+        class Test {
+        	String f(int i) {
+        		switch(i) {
+        			case 0: return "A";
+        			case 1: return "B";
+        			case 2: return "C";
+        			default:
+        				assert false;
+        		}
+        	}
+        	public static void main(String[] args) {
+        		Test t = new Test();
+        		for (int i = 0; i<4; i++) {
+        			System.out.println(t.f(i));
+        		}
+        	}
+        }
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Prints "ABC" and throws AsssertionError</odp>
+		<odp>Prints "ABC" and throws AsssertionException</odp>
+		<odp>Prints "ABC" and exits without any error</odp>
+		<odp>Compilation error</odp>	
+		<odp>None of the above</odp>
+        <poprawne>4</poprawne>
+    </pyt>
+    <pyt>
+        <nr>2</nr>
+        <tresc><![CDATA[Exception1 and Excepiton2 are subclasses of Exception. Exception3 is subclass of RuntimeException. Given the following classes, which of these exceptions can be trown by the test() method in class A3?
+        
+        class A1 {
+        	void test() throws Exception1, Exception2 {}
+        }
+        
+        class A2 extends A1 {
+        	void test() {}
+        }
+        
+        class A3 extends A2 {
+        	void test() throws _________ {}
+        }
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+		<odp>Exception1, Exception2 and RuntimeException</odp>
+		<odp>Exception1 and Exception2 only</odp>
+		<odp>RuntimeException only</odp>	
+		<odp>It cannot throw any exceptions</odp>
+        <poprawne>3</poprawne>
+    </pyt>
+    <pyt>
+        <nr>3</nr>
+        <tresc><![CDATA[What will be the result of compiling and running the following code? (Assume that assertions are enabled at compile time as well as at runtime)
+        
+        1. public class AssertTest
+        2. {
+        3. 		int LOCAL_RATE = 12;
+        4. 
+        5. 		private void computeAmount(int rate)
+        6.		{
+        7.			assert rate = LOCAL_RATE : "Invalid rate";
+        8.			int amount = 10000;
+        9. 			int total = amount + (amount * rate / 100);
+        10.			System.out.println("Total = " + total);
+        11.		}
+        12.
+        13.		public static void main(String[] args)
+        14.		{
+        15.			AssertTest test = new AssertTest();
+        16.			test.computeAmount(12);
+        17.		}
+        18.	}
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>It will print - "Total = 11200"</odp>
+		<odp>Compilatiorn error at line 16</odp>
+		<odp>Compilatiorn error at line 7</odp>
+		<odp>Compilatiorn error at line 5</odp>	
+		<odp>None of these</odp>
+        <poprawne>3</poprawne>
+    </pyt>
+    <pyt>
+        <nr>4</nr>
+        <tresc><![CDATA[Suppose a NullPointerException is thrown by the test() method. Which message is displayed?
+        
+        void Method() {
+        	try {
+        		test();
+        		System.out.println("Message1");
+        	}
+        	catch (RuntimeException e) {
+        		System.out.println("Message2");
+        	}
+        	finally {
+        		System.out.println("Message3");
+       		}
+        	System.out.println("Message4");
+        }	
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>3</liczba_poprawnych>
+        <odp>Message1</odp>
+		<odp>Message2</odp>
+		<odp>Message3</odp>
+		<odp>Message4</odp>	
+        <poprawne>2,3,4</poprawne>
+    </pyt>
+    <pyt>
+        <nr>5</nr>
+        <tresc><![CDATA[What will happen when you attempt to run the following code from the command line using command - java AssertDemo? (Assume that the code is compiled with assertions enabled.)
+        
+        1. public class AssertDemo
+        2. {
+        3. 		public static void main(String[] args)
+        4. 		{
+        5.			boolean assertEnabled = false;
+        6.
+        7.			assert assertEnabled = true;
+        8.
+        9. 			System.out.println("Assertions are " + 
+        10.			(assertEnabled ? "enabled" : "disabled"));
+        11.  	}
+        12. }
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>It will throw AssertionError</odp>
+		<odp>The code will not compile, compilation error at line 7</odp>
+		<odp>It will print - Assertions are disabled</odp>
+		<odp>It will print - Assertions are enabled</odp>
+		<odp>None of these</odp>
+        <poprawne>3</poprawne>
+    </pyt>
+    <pyt>
+        <nr>6</nr>
+        <tresc><![CDATA[Which of the following exceptions are NOT thrown by the JVM?]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>3</liczba_poprawnych>
+        <odp>IllegalArgumentException</odp>
+		<odp>IllegalStateException</odp>
+		<odp>ArrayIndexOutOfBounds</odp>
+		<odp>StackOverflowError</odp>	
+		<odp>NumberFormatException</odp>
+        <poprawne>1,2,5</poprawne>
+    </pyt>
+    <pyt>
+        <nr>7</nr>
+        <tresc><![CDATA[Given bellow is the doSomething(int i) method. For which values of i, the assert condition at line 14 will be evaluated false? (Assume that this methods is contained in class, which is compiled and run with assertions enabled)
+        
+        1. void doSomething(int i)
+        2. {
+        3. 		int a = i%3;
+        4. 		if (a==1)
+        5.		{
+        6.			// some action for a=1
+        7.		}
+        8.		else if (a==2)
+        9.		{
+        10.			// some action for a=2
+        11.		}
+        12.		else
+        13.		{
+        14.			assert a==0 : a;
+        15.			// some action for a=0
+        16.		}
+        17.	}
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>6</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp><![CDATA[For i > 3]]></odp>
+		<odp><![CDATA[For i < 3 and i > 0]]></odp>
+		<odp><![CDATA[For i < 0]]></odp>
+		<odp><![CDATA[For i = 3 and its multiples such as 6,9,12... etc.]]></odp>
+		<odp><![CDATA[For i = 0]]></odp>
+		<odp><![CDATA[The assert condition will not be evaluated to false for any value of ]]></odp>
+        <poprawne>3</poprawne>
+    </pyt>
+    <pyt>
+        <nr>8</nr>
+        <tresc><![CDATA[What will be the result of an attempt to compile and run the following program?
+        
+        class Test {
+        	void f() {
+				throw new RuntimeException();
+        	}
+        	public static void main(String[] args) throws Exception {
+        		Test t = new Test();
+        		try {
+        			t.f();
+        		}
+        		catch (Exception e) {
+					System.out.println("catch");
+        		}
+        		finally {
+					System.out.println("finally");
+		        	throw e;
+        		}
+        	}
+        }
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>6</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Code does not compile because f() does not declare that it throws RuntimeException</odp>
+        <odp>Compiles and prints "catch finally"</odp>
+		<odp>Compiles and prints "finally"</odp>
+		<odp>Compiles and prints "catch"</odp>
+		<odp>Compiles and runs without output</odp>	
+		<odp>None of the above</odp>
+        <poprawne>6</poprawne>
+    </pyt>
+    <pyt>
+        <nr>9</nr>
+        <tresc><![CDATA[What will be the output when you compile and run the following program?
+        
+        public class Base
+        {
+        	private void test()
+        	{
+        		int i = 66;
+        		switch(i)
+        		{
+        			case 'A':
+        				System.out.println("zero");
+        				break;
+        			case 'B':
+        				System.out.println("one");
+        			case 'C':
+        				System.out.println("two");
+        			default:
+        				System.out.println("default");
+        		}
+        	}
+        	public static void main(String[] args) {
+        	{
+        		new Base().test();
+        	}
+        }
+        ]]></tresc>
+        <level>2</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>one</odp>
+		<odp>one default</odp>
+		<odp>one two default</odp>
+		<odp>default</odp>	
+		<odp>Compilation error - switch cannot take char type as argument</odp>
+        <poprawne>3</poprawne>
+    </pyt>
+    <pyt>
+        <nr>10</nr>
+        <tresc><![CDATA[What will be the output when you compile and run the following program?
+        
+        class MyException extends Exception {}
+        class Test {
+	        void f() throws MyException {
+				throw new MyException();
+			}
+        public static void main(String[] args) throws MyException {
+        	MyException e1 = null;
+        	Test t = new Test();
+        	try {
+        		t.f();
+        	}
+        	catch (MyException e) {
+				e1 = e; System.out.println("catch");
+			}	
+        	finally {
+				System.out.print("finally"); throw e1;
+			}
+        	System.out.println("end");
+        	}
+        }
+        ]]></tresc>
+        <level>3</level>
+        <liczba_odpowiedzi>6</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Prints "catch"</odp>
+		<odp>Prints "catch finally"</odp>
+		<odp>Does not compile</odp>
+		<odp>The program terminates without any output</odp>	
+		<odp>Prints "catch finally end"</odp>
+		<odp>None of the above</odp>
+        <poprawne>3</poprawne>
+    </pyt>
+    <pyt>
+        <nr>11</nr>
+        <tresc><![CDATA[What will be the result of attempting to compile and run the following code?
+       
+	class MyException extends Exception{}
+       class Test {
+        	void f() throws MyException {throw new MyException();}
+        	public static void main (String[] args) throws MyException {
+        		MyException e1;
+        		Test t = new Test();
+        		try {
+        			t.f();
+        		} 
+        		catch (MyException e) {
+					e1 = e; System.out.print("catch 1 ");
+        		}
+        		finally {
+        			try {
+        				throw e1;
+        			}
+        			catch (Exception e) {
+						System.out.println("catch 2 ");
+					}
+        		}
+				System.out.println("end");
+			}
+		}
+        ]]></tresc>
+        <level>3</level>
+        <liczba_odpowiedzi>6</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Prints "catch 1 catch 2"</odp>
+		<odp>Prints "catch 1"</odp>
+		<odp>Prints "catch 1 catch 2 end"</odp>
+		<odp>Prints "catch 1 end"</odp>	
+		<odp>Does not compile</odp>
+		<odp>None of the above</odp>
+        <poprawne>5</poprawne>
+    </pyt>
+    <pyt>
+        <nr>12</nr>
+        <tresc><![CDATA[What will happen when you attempt to compile and run the following code? (Assume that the code is compiled and run with assertions enabled.)
+        
+        public class AssertTest {
+        	private void methodA(int i)
+        	{
+        		assert i >=0 : methodB();
+        		System.out.println(i);
+        	}
+        	private String methodB() {
+        		return "The value must not be negative";
+        	}
+        	
+        	public static void main(String[] args) {
+        		AssertTest test = new AssertTest();
+        		test.methodA(-10);
+        	}
+        }
+        ]]></tresc>
+        <level>3</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+		<odp>It will print -10</odp>
+		<odp>It will result in AssertionError with the message - "The value must not be negative"</odp>
+		<odp>The code will not compile</odp>	
+		<odp>None of these</odp>
+        <poprawne>2</poprawne>
+    </pyt>
+    <pyt>
+        <nr>13</nr>
+        <tresc><![CDATA[The AssertTest class defines a method, methodA(int i), as given bellow. Which of the following declarations of methodA(int i) would be valid in a subclass of AssertTest? (Assume  that the code is compiled succesfully and runs with assertions enabled)
+        
+        public class AssertTest 
+        {
+        	public void methodA(int i) throws AssertionError
+        	{
+        		assert i < 1024 : "Invalid Value";
+        	}
+        }
+        ]]></tresc>
+        <level>3</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>2</liczba_poprawnych>
+        <odp>public void methodA(int i)</odp>
+		<odp>public void methodA(int i) throws Exception</odp>
+		<odp>public void methodA(int i) throws Throwable</odp>
+		<odp>public void methodA(int i) throws Error</odp>	
+		<odp>Only the first answer is valid</odp>
+        <poprawne>1,5</poprawne>
+    </pyt>
+    <pyt>
+        <nr>14</nr>
+        <tresc><![CDATA[What will be result of an attempt to compile and run the following code?
+        
+        public class Test {
+        	public static void main(String[] args) {
+        		float i=0;
+        		final byte j = 5;
+        		final short s = 4;
+        		while (i < 5) {
+        			switch ((int)i + 2)	{	//1
+        				default:			// 2
+        				case j: System.out.println("one");	//3
+        				case s + 1:			// 4
+        					{
+        						System.out.println("two");
+        						break;
+        					}
+        			}i++;
+        		}
+        	}
+        }
+        ]]></tresc>
+        <level>3</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Compiler error on line 1</odp>
+		<odp>Compiler error on line 2</odp>
+		<odp>Compiler error on line 3</odp>
+		<odp>Compiler error on line 4</odp>	
+		<odp>Compiles and runs without errors</odp>
+        <poprawne>4</poprawne>
+    </pyt>
+    <pyt>
+        <nr>15</nr>
+        <tresc><![CDATA[What will happen when you attempt to compile and run the following code? (Assume that the code is compiled and run with assertions enabled.)
+        
+        1. public class AssertTest
+        2. {
+        3. 		public static void main(String[] args)
+        4.		{
+        5.			float f1 = Float.NaN;
+        6.			float f2 = f1;
+        7.			float f3 = 1.2f;
+        8.			
+        9.			try
+        10.			{
+        11.				assert (f2 == f1) : f2 = 2;
+        12.				f3 = 1.5f;
+        13.			} catch (AssertionError ae)
+        14.			{
+        15.				f3++;
+        16.			}
+        17.
+        18.			f3 += f2;
+        19.			System.out.println("f3 = " + f3);
+        20.		}
+        21.	}
+        ]]></tresc>
+        <level>3</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Compilation error at line 5</odp>
+		<odp>Compilation error at line 7</odp>
+		<odp>It will print - "f3 = 3.5"</odp>
+		<odp>It will print - "f3 = 4.2"</odp>	
+		<odp>It will print - "f3 = NaN"</odp>
+        <poprawne>5</poprawne>
+    </pyt>
+    <pyt>
+        <nr>16</nr>
+        <tresc><![CDATA[Which method can legally be inserted after the comment //XX?
+        
+        class Parent {
+        	public void amethod(int i) throws IOException {
+				?
+        	}
+        }
+        public class Child extends Parent
+        {
+        	//XX
+        }
+        ]]></tresc>
+        <level>3</level>
+        <liczba_odpowiedzi>6</liczba_odpowiedzi>
+        <liczba_poprawnych>4</liczba_poprawnych>
+        <odp>public void amethod(int i) throws FileNotFoundException {}</odp>
+		<odp>public void amethod(int i) throws IOException, RuntimeException {}</odp>
+		<odp>public void amethod(int i) throws RuntimeException {}</odp>
+		<odp>public void amethod(int i) throws Exception {}</odp>	
+		<odp>public void amethod(int i) {}</odp>
+		<odp>public void amethod(int i) throws Throwable {}</odp>
+        <poprawne>1,2,3,5</poprawne>
+    </pyt>
+    <pyt>
+        <nr>17</nr>
+        <tresc><![CDATA[What is displayed when the following code is compiled and executed?
+        
+        long val = 2;
+        switch (val)
+        {
+        	default:
+        		System.out.println("default");
+        	case 1:
+        		System.out.println("1");
+        	case 2:
+        		System.out.println("2");
+        } 
+        ]]></tresc>
+        <level>1</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>Prints "default"</odp>
+		<odp>Prints "2"</odp>
+		<odp>Fails to compile because there are no break statements in the case clauses</odp>
+		<odp>Fails to compile because the default clause cannot appear before the cases</odp>	
+		<odp>Fails to compile because a long data type cannot be passed to a switch statement</odp>
+        <poprawne>5</poprawne>
+    </pyt>
+    <pyt>
+        <nr>18</nr>
+        <tresc><![CDATA[How many times will "Test" be printed, when the following loop is executed?
+        
+        for (int k=1; k<10; k++) {
+        	if (k % 2 == 1)
+        		continue;
+        	System.out.println("Test");
+        }
+        ]]></tresc>
+        <level>1</level>
+        <liczba_odpowiedzi>4</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>0</odp>
+		<odp>4</odp>
+		<odp>5</odp>
+		<odp>6</odp>	
+        <poprawne>2</poprawne>
+    </pyt>
+    <pyt>
+        <nr>19</nr>
+        <tresc><![CDATA[Which of the following code fragments can be inserted at a specified location in the given code so that it continues with the iteration of the outermost loop?
+        
+        outer:	for (int x = 0; x<3; x++)
+        		{
+        			middle: for (int y = 0; y<3; y++)
+        					{
+        					inner: for (int z = 0; z<3; z++)
+        						{
+        							if (y==1)
+        							{
+        								//insert code here
+        							}
+        						}
+        					}
+        		}
+        ]]></tresc>
+        <level>1</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>1</liczba_poprawnych>
+        <odp>break;</odp>
+		<odp>break middle;</odp>
+		<odp>break outer;</odp>
+		<odp>continue;</odp>	
+		<odp>continue middle;</odp>
+        <poprawne>2</poprawne>
+    </pyt>
+    <pyt>
+        <nr>20</nr>
+        <tresc><![CDATA[The AssertionError class has the "-IS-A" relationship with which of the following classes?]]></tresc>
+        <level>1</level>
+        <liczba_odpowiedzi>5</liczba_odpowiedzi>
+        <liczba_poprawnych>2</liczba_poprawnych>
+        <odp>RuntimeError</odp>
+		<odp>Error</odp>
+		<odp>VirtualMachineError</odp>
+		<odp>IllegalAccessException</odp>	
+		<odp>Throwable</odp>
+        <poprawne>2,5</poprawne>
+    </pyt>    
+</obj>
