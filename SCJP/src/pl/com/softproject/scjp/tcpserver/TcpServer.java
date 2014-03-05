@@ -40,8 +40,10 @@ public class TcpServer {
             do {
                 clientSentence = inFromClient.readLine();
                 System.out.println("Received: " + clientSentence);
-                capitalizedSentence = clientSentence.toUpperCase() + '\n' + '\r';
-                outToClient.writeBytes(capitalizedSentence);
+                if(clientSentence != null) {
+                    capitalizedSentence = clientSentence.toUpperCase() + '\n' + '\r';
+                    outToClient.writeBytes(capitalizedSentence);
+                }
                 System.out.println("responce sent");
 
             } while(!clientSentence.equals("end"));
