@@ -17,7 +17,7 @@ public class MyController {
     
     protected Logger logger = Logger.getLogger(getClass());
     
-    @RequestMapping("/home.htm")
+    @RequestMapping("/home")
     public ModelAndView home() {
         
         logger.debug("MyController.home()");
