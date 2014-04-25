@@ -15,7 +15,7 @@
            ">
 		
     <security:http>
-        <security:intercept-url pattern="/*" access="ROLE_USER,ROLE_ADMIN" />        
+        <security:intercept-url pattern="/**" access="ROLE_USER,ROLE_ADMIN" />        
         <security:form-login />
         <security:anonymous />
         <security:http-basic />
