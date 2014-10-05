@@ -14,6 +14,8 @@ public class EnumTest {
         Fruit f = Fruit.APPLE;
         int i = Fruit.LEMON.ordinal();
         
+        Fruit ff = Fruit.values()[1];
+        
         System.out.println(i);
     }
     
