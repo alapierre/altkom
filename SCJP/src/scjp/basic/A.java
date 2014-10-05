@@ -1,4 +1,4 @@
-package scjp.collections.basic;
+package scjp.basic;
 
 /*
  * To change this template, choose Tools | Templates
